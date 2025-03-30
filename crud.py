@@ -4,8 +4,8 @@ import utils
 import datetime
 
 def create_short_url(db: Session, original_url: str):
-    original_url = str(original_url)  # 🔹 Convertimos HttpUrl a string
-    short_url = utils.generate_short_url()
+    original_url    = str(original_url)  # 🔹 Convertimos HttpUrl a string
+    short_url       = utils.generate_short_url()
     expiration_date = datetime.datetime.utcnow() + datetime.timedelta(days=3)
     
     db_url = models.URL(

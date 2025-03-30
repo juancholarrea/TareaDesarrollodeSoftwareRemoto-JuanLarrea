@@ -2,7 +2,7 @@ from pydantic import BaseModel
 import datetime
 
 class URLBase(BaseModel):
-    url: str  # Cambiamos HttpUrl por str
+    url: str  
 
 class URLCreate(URLBase):
     pass

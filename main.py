@@ -3,20 +3,23 @@ from sqlalchemy.orm import Session
 from database import SessionLocal, engine
 import models, crud, schemas
 
-# Crear la base de datos
 db = SessionLocal()
 models.Base.metadata.create_all(bind=engine)
 db.close()
 
 app = FastAPI()
 
-# Dependency
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
+        
+        
+#############################
+# EndPoints
+#############################
         
 @app.get("/")
 def read_root():
